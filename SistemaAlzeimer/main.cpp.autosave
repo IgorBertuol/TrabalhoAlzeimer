@@ -1,0 +1,15 @@
+#include <QCoreApplication>
+#include <iostream>
+#include "Lista.h"
+#include "Paciente.h"
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+    QCoreApplication a(argc, argv);
+    Lista lista;
+    string nome = "igor";
+    Paciente *paciente = new Paciente("igor",12,"M","america","Sim","natural");
+    return a.exec();
+}
