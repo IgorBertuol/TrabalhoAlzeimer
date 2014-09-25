@@ -71,6 +71,7 @@ void Lista::imprimir(){
         cout << atual->item->getSexo() << endl;
         cout << atual->item->getHistorico() << endl;
         cout << atual->item->getTratamento() << endl;
+        cout << endl;
         atual = atual->proximo;
     }
 }

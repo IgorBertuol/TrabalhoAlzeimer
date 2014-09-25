@@ -4,7 +4,7 @@
 #define LISTA_H
 
 class Lista{
-private:
+public:
     typedef struct No{
         Paciente* item;
         No* proximo;

@@ -17,8 +17,10 @@ TEMPLATE = app
 
 SOURCES += main.cpp \
     Paciente.cpp \
-    Lista.cpp
+    Lista.cpp \
+    Arquivo.cpp
 
 HEADERS += \
     Paciente.h \
-    Lista.h
+    Lista.h \
+    Arquivo.h
