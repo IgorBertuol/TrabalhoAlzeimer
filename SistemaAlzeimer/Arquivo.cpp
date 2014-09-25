@@ -4,29 +4,37 @@
 
 using namespace std;
 
-void Arquivo::escreverArquivo(Lista* lista){
-    Paciente *paciente;
+
+void Arquivo::escreverArquivo(Lista *lista){
     ofstream arquivo("/home/igor/SistemaAlzeimer/Pacientes.csv");
     if(!arquivo.is_open()){
         cout << "Arquivo nao foi aberto" << endl;
     }
+
+    arquivo << "Paciente" << (char)59;
+    arquivo << "Idade" << (char)59;
+    arquivo << "Continente" << (char)59;
+    arquivo << "Sexo" << (char)59;
+    arquivo << "Historico familiar" << (char)59;
+    arquivo << "Tratamento" << (char)13;
+
     while(lista->primeiro != NULL){
-        arquivo << paciente->getNome() << (char)59;
-        arquivo << paciente->getIdade() << (char)59;
-        arquivo << paciente->getContinente() << (char)59;
-        arquivo << paciente->getSexo() << (char)59;
-        arquivo << paciente->getHistorico() << (char)59;
-        arquivo << paciente->getTratamento() << (char)13;
+        arquivo << lista->primeiro->item->getNome() << (char)59;
+        arquivo << lista->primeiro->item->getIdade() << (char)59;
+        arquivo << lista->primeiro->item->getContinente() << (char)59;
+        arquivo << lista->primeiro->item->getSexo() << (char)59;
+        arquivo << lista->primeiro->item->getHistorico() << (char)59;
+        arquivo << lista->primeiro->item->getTratamento() << (char)13;
         lista->primeiro = lista->primeiro->proximo;
     }
 
     arquivo.close();
 }
 
-
 Lista *Arquivo::lerArquivo(){
 
     string paciente1;
+    string espaco;
     Lista *lista = new Lista;
     ifstream arquivo("/home/igor/SistemaAlzeimer/Pacientes.csv");
 
@@ -34,7 +42,6 @@ Lista *Arquivo::lerArquivo(){
         cout << "arquivo nao foi aberto!\n";
         return NULL;
     }
-    getline(arquivo,paciente1);
     while(!arquivo.eof()){
         Paciente *paciente = new Paciente;
 
@@ -54,5 +61,4 @@ Lista *Arquivo::lerArquivo(){
         lista->inserir(paciente);
     }
     return lista;
-    arquivo.close();
 }

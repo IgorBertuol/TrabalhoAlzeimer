@@ -85,6 +85,7 @@ void Lista::consultar(string nome){
         cout << "nao" << endl;
     }
     else{
-        cout << atual->item->getIdade() << endl;
+        cout << "CORINTIA";
+        cout << atual->item->getNome() << endl;
     }
 }
