@@ -42,6 +42,8 @@ Lista *Arquivo::lerArquivo(){
         cout << "arquivo nao foi aberto!\n";
         return NULL;
     }
+
+    //getline(arquivo,paciente1);
     while(!arquivo.eof()){
         Paciente *paciente = new Paciente;
 
@@ -55,7 +57,7 @@ Lista *Arquivo::lerArquivo(){
         paciente->setSexo(paciente1.c_str());
         getline(arquivo,paciente1,';');
         paciente->setHistorico(paciente1.c_str());
-        getline(arquivo,paciente1);
+        getline(arquivo,paciente1,'\r');
         paciente->setTratamento(paciente1.c_str());
 
         lista->inserir(paciente);

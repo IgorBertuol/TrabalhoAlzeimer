@@ -1,6 +1,7 @@
 #include <fstream>
 #include "Paciente.h"
 #include "Lista.h"
+//#include "Tratamento.h"
 #include <cstdlib>
 
 #ifndef ARQUIVO_H
