@@ -20,11 +20,13 @@ SOURCES += main.cpp \
     Lista.cpp \
     Arquivo.cpp \
     Tratamento.cpp \
-    Telas.cpp
+    Telas.cpp \
+    Relatorios.cpp
 
 HEADERS += \
     Paciente.h \
     Lista.h \
     Arquivo.h \
     Tratamento.h \
-    Telas.h
+    Telas.h \
+    Relatorios.h

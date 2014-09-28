@@ -89,3 +89,14 @@ void Lista::consultar(string nome){
         cout << atual->item->getNome() << endl;
     }
 }
+
+int Lista::contador(){
+    int cont = 0;
+    atual = primeiro;
+    while(atual != NULL){
+        cont ++;
+        atual = atual->proximo;
+    }
+
+    return cont;
+}

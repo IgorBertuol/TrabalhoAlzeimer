@@ -18,6 +18,7 @@ public:
     Lista();
     void inserir(Paciente* paciente);
     void deletar(string nome);
+    int contador();
     int alterar(string nome);
     void imprimir();
     void consultar(string nome);
