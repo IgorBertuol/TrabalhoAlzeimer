@@ -11,10 +11,10 @@ using namespace std;
 
 class Relatorios{
 public:
-    void RelatorioSexo(Lista *lista,float cont);
-    void RelatorioContinente(Lista *lista,float cont);
-    void RelatorioXY(Lista *lista);
-    void Relatorio(Lista *lista);
+    void relatorioSexo(Lista *lista,float cont);
+    void relatorioContinente(Lista *lista,float cont);
+    void relatorioXY(Lista *lista);
+    void relatorio(Lista *lista);
 
 };
 

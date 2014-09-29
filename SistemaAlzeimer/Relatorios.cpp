@@ -1,7 +1,7 @@
 #include "Relatorios.h"
 
 
-void Relatorios::RelatorioSexo(Lista *lista,float cont){
+void Relatorios::relatorioSexo(Lista *lista,float cont){
     int contSexoM = 0;
     int contSexoF = 0;
     float percF,percM;
@@ -21,7 +21,7 @@ void Relatorios::RelatorioSexo(Lista *lista,float cont){
     cout << "Masculino:  " << contSexoM << "  / Porcentagem: " << percM << "%"<< endl  << endl;
 }
 
-void Relatorios::RelatorioContinente(Lista *lista,float cont){
+void Relatorios::relatorioContinente(Lista *lista,float cont){
     int contContinenteAm = 0;
     int contContinenteAs = 0;
     int contContinenteO = 0;
@@ -31,7 +31,7 @@ void Relatorios::RelatorioContinente(Lista *lista,float cont){
     float percAm,percAs,percO,percAf,percE;
 
     while(lista->primeiro != NULL){
-        cout << "oi" << endl;
+        cout <<  "oi" << endl;
         if(lista->primeiro->item->getContinente() == "america"){
             contContinenteAm ++;
         }else if(lista->primeiro->item->getContinente() == "asia"){
@@ -46,7 +46,6 @@ void Relatorios::RelatorioContinente(Lista *lista,float cont){
         lista->primeiro = lista->primeiro->proximo;
     }
 
-    cout << contContinenteAm;
     percAm = (contContinenteAm/cont) * 100;
     percAs = (contContinenteAs/cont) * 100;
     percO = (contContinenteO/cont) * 100;
@@ -65,7 +64,7 @@ void Relatorios::RelatorioContinente(Lista *lista,float cont){
 
 
 
-void Relatorios::RelatorioXY(Lista *lista){
+void Relatorios::relatorioXY(Lista *lista){
     int contXY;
 
 
@@ -82,10 +81,10 @@ void Relatorios::RelatorioXY(Lista *lista){
     cout << "Feminino:  " <<  0<< "  / Europa: " <<0  << "%"<< endl;
 }
 
-void Relatorios::Relatorio(Lista *lista){
-    int cont;
+void Relatorios::relatorio(Lista *lista){
+    float cont;
     cont = lista->contador();
-    RelatorioSexo(lista,cont);
-    RelatorioContinente(lista,cont);
-    RelatorioXY(lista);
+    relatorioSexo(lista,cont);
+    relatorioContinente(lista,cont);
+    relatorioXY(lista);
 }

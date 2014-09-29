@@ -27,7 +27,7 @@ void Lista::inserir(Paciente* paciente){
     }
 }
 
-void Lista::deletar(string nome){
+int Lista::deletar(string nome){
     Apontador deletaNo = NULL;
     temp = primeiro;
     atual = primeiro;
@@ -36,7 +36,7 @@ void Lista::deletar(string nome){
         atual = atual->proximo;
     }
     if(atual == NULL){
-        cout << "Paciente nao encontrado !" << endl;
+        return 0;
         delete deletaNo;
     }
     else{
@@ -44,7 +44,7 @@ void Lista::deletar(string nome){
         atual = atual->proximo;
         temp->proximo = atual;
         delete deletaNo;
-        cout << "O paciente " << nome << " foi deletado" << endl;
+        return 1;
     }
 }
 int Lista::alterar(string nome){
@@ -53,10 +53,10 @@ int Lista::alterar(string nome){
         atual = atual->proximo;
     }
     if(atual == NULL){
-        return 1;
+        return 0;
     }
     else{
-        return 0;
+        return 1;
     }
 }
 

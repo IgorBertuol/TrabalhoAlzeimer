@@ -8,7 +8,7 @@
 
 
 
-void Telas::Menu(){
+void Telas::menu(){
    system("clear");
    cout<< "Sistema de Apoio a Pesquisas da Doença de Alzeheimer" << endl << endl;
    cout<<"1. Pacientes" << endl;
@@ -19,20 +19,20 @@ void Telas::Menu(){
     cin >> op;
     switch (op){
     case 1:
-        MenuPaciente();
+        menuPaciente();
         break;
     case 2:
-        MenuManipulacaoDados();
+        menuManipulacaoDados();
         break;
     case 3:
-        MenuOpcoes();
+        menuOpcoes();
         break;
     default:
         break;
     }
 }
 
-void Telas::MenuPaciente(){
+void Telas::menuPaciente(){
    system("clear");
    cout<< "Sistema de Apoio a Pesquisas da Doença de Alzeheimer" << endl << endl;
    cout<<"1. Cadastar paciente" << endl;
@@ -43,7 +43,7 @@ void Telas::MenuPaciente(){
     cin >> op;
     switch (op){
     case 1:
-            MenuPacienteCadastrar();
+            menuPacienteCadastrar();
         break;
     case 2:
             system("clear");
@@ -52,17 +52,17 @@ void Telas::MenuPaciente(){
             lista->imprimir();
             getchar();
             getchar();
-            MenuPaciente();
+            menuPaciente();
         break;
     case 3:
-            Menu();
+            menu();
         break;
     default:
         break;
     }
 }
 
-void Telas::MenuPacienteCadastrar( ){
+void Telas::menuPacienteCadastrar( ){
     string nome,continente,sexo,histfam,tratamento;
     int idade;
     system("clear");
@@ -82,10 +82,10 @@ void Telas::MenuPacienteCadastrar( ){
     cin >>  tratamento;
     Paciente *paciente = new Paciente(nome,idade,continente,sexo,histfam,tratamento);
     lista->inserir(paciente);
-    MenuPaciente();
+    menuPaciente();
 }
 
-void Telas::MenuManipulacaoDados( ){
+void Telas::menuManipulacaoDados( ){
     system("clear");
     cout<< "Sistema de Apoio a Pesquisas da Doença de Alzeheimer" << endl << endl;
     cout<<"1. Geracao de dados estatisticos" << endl;
@@ -103,16 +103,16 @@ void Telas::MenuManipulacaoDados( ){
          system("clear");
          cout<< "Sistema de Apoio a Pesquisas da Doença de Alzeheimer" << endl << endl;
          cout<< "Geração de relatórios " << endl << endl;
-         relatorio.Relatorio(lista);
+         relatorio.relatorio(lista);
          getchar();
          getchar();
-         MenuManipulacaoDados();
+         menuManipulacaoDados();
          break;
      case 3:
 
          break;
      case 4:
-             Menu();
+             menu();
          break;
      default:
          break;
@@ -120,7 +120,7 @@ void Telas::MenuManipulacaoDados( ){
 }
 
 
-void Telas::MenuOpcoes() {
+void Telas::menuOpcoes() {
     system("clear");
     cout<< "Sistema de Apoio a Pesquisas da Doença de Alzeheimer" << endl << endl;
     cout<<"1. Importar CSV   " << endl;
@@ -137,20 +137,20 @@ void Telas::MenuOpcoes() {
          system("clear");
          cout<< "Sistema de Apoio a Pesquisas da Doença de Alzeheimer" << endl << endl;
          cout<< "Geração de relatórios " << endl << endl;
-         relatorio.Relatorio(lista);
+         relatorio.relatorio(lista);
          getchar();
          getchar();
-         MenuManipulacaoDados();
+         menuManipulacaoDados();
          break;
      case 3:
-            Menu();
+            menu();
          break;
      default:
          break;
      }
 }
 
-void Telas::Teste(){
+void Telas::teste(){
 
         float cont;
         string nome = "igor";
@@ -165,8 +165,8 @@ void Telas::Teste(){
         lista->imprimir();
         cont = lista->contador();
         //relatorio.RelatorioContinente(lista);
-        relatorio.RelatorioSexo(lista,cont);
-        relatorio.RelatorioContinente(lista,cont);
+        relatorio.relatorioSexo(lista,cont);
+        relatorio.relatorioContinente(lista,cont);
         //cout << lista->contador()<<endl;
         //arquivo.escreverArquivo(lista);
         //lista = arquivo.lerArquivo();

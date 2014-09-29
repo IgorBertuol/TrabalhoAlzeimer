@@ -13,12 +13,12 @@ using namespace std;
 
 class Telas{
 public:
-    void Menu();
-    void MenuPaciente();
-    void MenuPacienteCadastrar();
-    void MenuManipulacaoDados();
-    void MenuOpcoes();
-    void Teste();
+    void menu();
+    void menuPaciente();
+    void menuPacienteCadastrar();
+    void menuManipulacaoDados();
+    void menuOpcoes();
+    void teste();
     Relatorios relatorio;
     Lista *lista= new Lista;
     Arquivo arquivo;

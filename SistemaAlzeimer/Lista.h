@@ -17,7 +17,7 @@ public:
 public:
     Lista();
     void inserir(Paciente* paciente);
-    void deletar(string nome);
+    int deletar(string nome);
     float contador();
     int alterar(string nome);
     void imprimir();
