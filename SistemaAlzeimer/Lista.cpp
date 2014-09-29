@@ -90,8 +90,8 @@ void Lista::consultar(string nome){
     }
 }
 
-int Lista::contador(){
-    int cont = 0;
+float Lista::contador(){
+    float cont = 0;
     atual = primeiro;
     while(atual != NULL){
         cont ++;

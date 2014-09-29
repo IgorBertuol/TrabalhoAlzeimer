@@ -31,7 +31,6 @@ void Relatorios::RelatorioContinente(Lista *lista,float cont){
     float percAm,percAs,percO,percAf,percE;
 
     while(lista->primeiro != NULL){
-        cout << "oi" << endl;
         if(lista->primeiro->item->getContinente() == "america"){
             contContinenteAm ++;
         }else if(lista->primeiro->item->getContinente() == "asia"){
@@ -46,7 +45,6 @@ void Relatorios::RelatorioContinente(Lista *lista,float cont){
         lista->primeiro = lista->primeiro->proximo;
     }
 
-    cout << contContinenteAm;
     percAm = (contContinenteAm/cont) * 100;
     percAs = (contContinenteAs/cont) * 100;
     percO = (contContinenteO/cont) * 100;

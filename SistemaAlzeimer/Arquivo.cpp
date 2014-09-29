@@ -6,7 +6,7 @@ using namespace std;
 
 
 void Arquivo::escreverArquivo(Lista *lista){
-    ofstream arquivo("/home/igor/SistemaAlzeimer/Pacientes.csv");
+    ofstream arquivo("/home/haliski/Downloads/TrabalhoAlzeimer-master/Pacientes.csv");
     if(!arquivo.is_open()){
         cout << "Arquivo nao foi aberto" << endl;
     }
@@ -36,7 +36,7 @@ Lista *Arquivo::lerArquivo(){
     string paciente1;
     string espaco;
     Lista *lista = new Lista;
-    ifstream arquivo("/home/igor/SistemaAlzeimer/Pacientes.csv");
+    ifstream arquivo("/home/haliski/Downloads/TrabalhoAlzeimer-master/Pacientes.csv");
 
     if(!arquivo.is_open()){
         cout << "arquivo nao foi aberto!\n";

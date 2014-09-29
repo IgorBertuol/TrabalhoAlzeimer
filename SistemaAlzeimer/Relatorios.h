@@ -6,13 +6,16 @@
 #include "Paciente.h"
 #include "Lista.h"
 
+
 using namespace std;
 
 class Relatorios{
 public:
-    void RelatorioSexo(Lista *lista,int cont);
-    void RelatorioContinente(Lista *lista);
+    void RelatorioSexo(Lista *lista,float cont);
+    void RelatorioContinente(Lista *lista,float cont);
     void RelatorioXY(Lista *lista);
+    void Relatorio(Lista *lista);
+
 };
 
 

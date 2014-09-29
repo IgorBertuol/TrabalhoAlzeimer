@@ -21,7 +21,8 @@ SOURCES += main.cpp \
     Arquivo.cpp \
     Tratamento.cpp \
     Telas.cpp \
-    Relatorios.cpp
+    Relatorios.cpp \
+    Excecoes.cpp
 
 HEADERS += \
     Paciente.h \
@@ -29,4 +30,5 @@ HEADERS += \
     Arquivo.h \
     Tratamento.h \
     Telas.h \
-    Relatorios.h
+    Relatorios.h \
+    Excecoes.h
