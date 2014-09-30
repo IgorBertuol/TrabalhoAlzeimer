@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Telas.h"
+#include "Interface/Telas.h"
 #include <QCoreApplication>
 
 using namespace std;
@@ -7,9 +7,10 @@ using namespace std;
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
-    Telas telas;
+    Telas *telas = new Telas;
+
     //telas.Menu();
-    telas.teste();
+    telas->teste();
 
     return 0;
 }

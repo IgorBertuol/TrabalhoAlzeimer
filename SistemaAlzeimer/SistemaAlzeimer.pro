@@ -16,19 +16,19 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp \
-    Paciente.cpp \
-    Lista.cpp \
-    Arquivo.cpp \
-    Tratamento.cpp \
-    Telas.cpp \
-    Relatorios.cpp \
-    Excecoes.cpp
+    Persistencia/Arquivo.cpp \
+    Interface/Telas.cpp \
+    Negocio/Excecoes.cpp \
+    Negocio/Lista.cpp \
+    Negocio/Paciente.cpp \
+    Negocio/Relatorios.cpp \
+    Negocio/Tratamento.cpp
 
 HEADERS += \
-    Paciente.h \
-    Lista.h \
-    Arquivo.h \
-    Tratamento.h \
-    Telas.h \
-    Relatorios.h \
-    Excecoes.h
+    Persistencia/Arquivo.h \
+    Interface/Telas.h \
+    Negocio/Excecoes.h \
+    Negocio/Lista.h \
+    Negocio/Paciente.h \
+    Negocio/Relatorios.h \
+    Negocio/Tratamento.h
