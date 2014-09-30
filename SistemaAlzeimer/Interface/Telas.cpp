@@ -154,6 +154,7 @@ void Telas::menuOpcoes() {
 
 void Telas::teste(){
 
+        float cont;
         string nome = "igor";
         Arquivo arquivo;
         Tratamento trataa;
@@ -169,6 +170,7 @@ void Telas::teste(){
         //lista = arquivo.lerArquivo();
 
         lista->imprimir();
+        cont = lista->contador();
         relatorio.relatorio(lista);
         //cout << lista->contador()<<endl;
         //arquivo.escreverArquivo(lista);

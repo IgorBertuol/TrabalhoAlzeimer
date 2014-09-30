@@ -63,15 +63,21 @@ int Lista::alterar(string nome){
 
 void Lista::imprimir(){
     atual = primeiro;
-    while(atual != NULL){
-        cout << atual->item->getNome() << endl;
-        cout << atual->item->getIdade() << endl;
-        cout << atual->item->getContinente() << endl;
-        cout << atual->item->getSexo() << endl;
-        cout << atual->item->getHistorico() << endl;
-        cout << atual->item->getTratamento().getNome() << endl;
-        cout << endl;
-        atual = atual->proximo;
+    if(atual == NULL){
+        cout << " LISTA VAZIA";
+    }else{
+
+
+        while(atual != NULL){
+            cout << atual->item->getNome() << endl;
+            cout << atual->item->getIdade() << endl;
+            cout << atual->item->getContinente() << endl;
+            cout << atual->item->getSexo() << endl;
+            cout << atual->item->getHistorico() << endl;
+            cout << atual->item->getTratamento().getNome() << endl;
+            cout << endl;
+            atual = atual->proximo;
+        }
     }
 }
 

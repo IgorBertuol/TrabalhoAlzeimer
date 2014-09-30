@@ -1,5 +1,5 @@
 #include "Negocio/Lista.h"
-#include "Persistencia/Arquivo.h"
+#include "Arquivo.h"
 #include <iostream>
 
 using namespace std;
