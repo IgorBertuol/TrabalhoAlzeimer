@@ -1,9 +1,9 @@
 #include "Paciente.h"
 
-#ifndef LISTA_H
-#define LISTA_H
+#ifndef LISTAPACIENTE_H
+#define LISTAPACIENTE_H
 
-class Lista{
+class ListaPaciente{
 public:
     typedef struct No{
         Paciente* item;
@@ -15,7 +15,7 @@ public:
     Apontador temp;
 
 public:
-    Lista();
+    ListaPaciente();
     void inserir(Paciente* paciente);
     int deletar(string nome);
     float contador();
@@ -24,4 +24,4 @@ public:
     void consultar(string nome);
 };
 
-#endif // LISTA_H
+#endif // LISTAPACIENTE_H

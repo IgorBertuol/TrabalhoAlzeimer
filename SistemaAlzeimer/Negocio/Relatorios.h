@@ -4,17 +4,17 @@
 #include <iostream>
 #include <string>
 #include "Paciente.h"
-#include "Lista.h"
+#include "ListaPaciente.h"
 
 
 using namespace std;
 
 class Relatorios{
 public:
-    void relatorioSexo(Lista *lista,float cont);
-    void relatorioContinente(Lista *lista,float cont);
-    void relatorioXY(Lista *lista,float cont);
-    void relatorio(Lista *lista);
+    void relatorioSexo(ListaPaciente *lista,float cont);
+    void relatorioContinente(ListaPaciente *lista,float cont);
+    void relatorioXY(ListaPaciente *lista,float cont);
+    void relatorio(ListaPaciente *lista);
 
 };
 

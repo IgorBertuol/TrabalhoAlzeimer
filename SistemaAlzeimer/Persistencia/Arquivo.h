@@ -1,6 +1,6 @@
 #include <fstream>
 #include "Negocio/Paciente.h"
-#include "Negocio/Lista.h"
+#include "Negocio/ListaPaciente.h"
 #include "Negocio/Tratamento.h"
 #include <cstdlib>
 
@@ -10,8 +10,8 @@
 class Arquivo{
 public:
     fstream arquivo;
-    void escreverArquivo(Lista*);
-    Lista *lerArquivo();
+    void escreverArquivo(ListaPaciente*);
+    ListaPaciente *lerArquivo();
 };
 
 #endif // ARQUIVO_H

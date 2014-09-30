@@ -19,16 +19,18 @@ SOURCES += main.cpp \
     Persistencia/Arquivo.cpp \
     Interface/Telas.cpp \
     Negocio/Excecoes.cpp \
-    Negocio/Lista.cpp \
     Negocio/Paciente.cpp \
     Negocio/Relatorios.cpp \
-    Negocio/Tratamento.cpp
+    Negocio/Tratamento.cpp \
+    Negocio/ListaPaciente.cpp \
+    Negocio/ListaTratamento.cpp
 
 HEADERS += \
     Persistencia/Arquivo.h \
     Interface/Telas.h \
     Negocio/Excecoes.h \
-    Negocio/Lista.h \
     Negocio/Paciente.h \
     Negocio/Relatorios.h \
-    Negocio/Tratamento.h
+    Negocio/Tratamento.h \
+    Negocio/ListaPaciente.h \
+    Negocio/ListaTratamento.h

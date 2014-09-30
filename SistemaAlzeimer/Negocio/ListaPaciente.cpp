@@ -1,17 +1,17 @@
 #include <iostream>
 #include <cstdlib>
-#include "Lista.h"
+#include "ListaPaciente.h"
 
 using namespace std;
 
 
-Lista::Lista(){
+ListaPaciente::ListaPaciente(){
     primeiro = NULL;
     atual = NULL;
     temp = NULL;
 }
 
-void Lista::inserir(Paciente* paciente){
+void ListaPaciente::inserir(Paciente* paciente){
     Apontador n = new No;
     n->proximo = NULL;
     n->item = paciente;
@@ -27,7 +27,7 @@ void Lista::inserir(Paciente* paciente){
     }
 }
 
-int Lista::deletar(string nome){
+int ListaPaciente::deletar(string nome){
     Apontador deletaNo = NULL;
     temp = primeiro;
     atual = primeiro;
@@ -47,7 +47,7 @@ int Lista::deletar(string nome){
         return 1;
     }
 }
-int Lista::alterar(string nome){
+int ListaPaciente::alterar(string nome){
     atual = primeiro;
     while(atual != NULL && atual->item->getNome() != nome){
         atual = atual->proximo;
@@ -61,27 +61,21 @@ int Lista::alterar(string nome){
 }
 
 
-void Lista::imprimir(){
+void ListaPaciente::imprimir(){
     atual = primeiro;
-    if(atual == NULL){
-        cout << " LISTA VAZIA";
-    }else{
-
-
-        while(atual != NULL){
-            cout << atual->item->getNome() << endl;
-            cout << atual->item->getIdade() << endl;
-            cout << atual->item->getContinente() << endl;
-            cout << atual->item->getSexo() << endl;
-            cout << atual->item->getHistorico() << endl;
-            cout << atual->item->getTratamento().getNome() << endl;
-            cout << endl;
-            atual = atual->proximo;
-        }
+    while(atual != NULL){
+        cout << atual->item->getNome() << endl;
+        cout << atual->item->getIdade() << endl;
+        cout << atual->item->getContinente() << endl;
+        cout << atual->item->getSexo() << endl;
+        cout << atual->item->getHistorico() << endl;
+        cout << atual->item->getTratamento().getNome() << endl;
+        cout << endl;
+        atual = atual->proximo;
     }
 }
 
-void Lista::consultar(string nome){
+void ListaPaciente::consultar(string nome){
     atual = primeiro;
     while(atual != NULL && atual->item->getNome() != nome){
         atual = atual->proximo;
@@ -95,7 +89,7 @@ void Lista::consultar(string nome){
     }
 }
 
-float Lista::contador(){
+float ListaPaciente::contador(){
     float cont = 0;
     atual = primeiro;
     while(atual != NULL){

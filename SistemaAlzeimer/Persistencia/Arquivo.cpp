@@ -1,11 +1,11 @@
-#include "Negocio/Lista.h"
+#include "Negocio/ListaPaciente.h"
 #include "Arquivo.h"
 #include <iostream>
 
 using namespace std;
 
 
-void Arquivo::escreverArquivo(Lista *lista){
+void Arquivo::escreverArquivo(ListaPaciente *lista){
     ofstream arquivo("/home/igor/SistemaAlzeimer/Pacientes.csv");
     if(!arquivo.is_open()){
         cout << "Arquivo nao foi aberto" << endl;
@@ -31,11 +31,11 @@ void Arquivo::escreverArquivo(Lista *lista){
     arquivo.close();
 }
 
-Lista *Arquivo::lerArquivo(){
+ListaPaciente *Arquivo::lerArquivo(){
 
     string paciente1;
     string espaco;
-    Lista *lista = new Lista;
+    ListaPaciente *lista = new ListaPaciente;
     ifstream arquivo("/home/igor/SistemaAlzeimer/Pacientes.csv");
     Tratamento tratamento;
     if(!arquivo.is_open()){

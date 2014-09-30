@@ -4,7 +4,7 @@
 #include <iostream>
 #include <string>
 #include "Negocio/Paciente.h"
-#include "Negocio/Lista.h"
+#include "Negocio/ListaPaciente.h"
 #include "Negocio/Relatorios.h"
 #include "Negocio/Tratamento.h"
 #include "Interface/Telas.h"
@@ -22,7 +22,7 @@ public:
     void menuOpcoes();
     void teste();
     Relatorios relatorio;
-    Lista *lista= new Lista;
+    ListaPaciente *lista= new ListaPaciente;
     Arquivo arquivo;
 
 

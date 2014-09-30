@@ -1,7 +1,7 @@
 #include "Relatorios.h"
 
 
-void Relatorios::relatorioSexo(Lista *lista,float cont){
+void Relatorios::relatorioSexo(ListaPaciente *lista,float cont){
     int contSexoM = 0;
     int contSexoF = 0;
     float percF,percM;
@@ -21,7 +21,7 @@ void Relatorios::relatorioSexo(Lista *lista,float cont){
     cout << "Masculino:  " << contSexoM << "  / Porcentagem: " << percM << "%"<< endl  << endl;
 }
 
-void Relatorios::relatorioContinente(Lista *lista,float cont){
+void Relatorios::relatorioContinente(ListaPaciente *lista,float cont){
     int contContinenteAm = 0;
     int contContinenteAs = 0;
     int contContinenteO = 0;
@@ -63,7 +63,7 @@ void Relatorios::relatorioContinente(Lista *lista,float cont){
 
 
 
-void Relatorios::relatorioXY(Lista *lista, float cont){
+void Relatorios::relatorioXY(ListaPaciente *lista, float cont){
     int contMAm = 0;
     int contFAm = 0;
     int contMAs = 0;
@@ -126,7 +126,7 @@ void Relatorios::relatorioXY(Lista *lista, float cont){
     cout << "Feminino da Europa:  " << contFEu << " e " << percFEu << "%"<< endl;
 }
 
-void Relatorios::relatorio(Lista *lista){
+void Relatorios::relatorio(ListaPaciente *lista){
     float cont;
     cont = lista->contador();
     relatorioSexo(lista,cont);
