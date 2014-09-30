@@ -2,13 +2,9 @@
 #include <string>
 #include <stdlib.h>
 #include <stdio.h>
-
 #include "Telas.h"
 
-
-
-
-void Telas::menu(){
+void Telas::Menu() {
    system("clear");
    cout<< "Sistema de Apoio a Pesquisas da Doença de Alzeheimer" << endl << endl;
    cout<<"1. Pacientes" << endl;
@@ -17,77 +13,86 @@ void Telas::menu(){
     cout <<"Selecione uma das opcoes: ";
     int op;
     cin >> op;
-    switch (op){
+    switch (op) {
     case 1:
-        menuPaciente();
+        MenuPaciente();
         break;
     case 2:
-        menuManipulacaoDados();
+        MenuManipulacaoDados();
         break;
     case 3:
-        menuOpcoes();
+        MenuOpcoes();
         break;
     default:
         break;
     }
 }
 
-void Telas::menuPaciente(){
+void Telas::MenuPaciente( ){
    system("clear");
    cout<< "Sistema de Apoio a Pesquisas da Doença de Alzeheimer" << endl << endl;
    cout<<"1. Cadastar paciente" << endl;
-   cout<<"2. Mostrar pacientes cadastrados" << endl;
-   cout<<"3. Voltar" << endl << endl;
+   cout<<"2. Alterar paciente" << endl;
+   cout<<"3. Excluir paciente" << endl;
+   cout<<"4. Consultar paciente" << endl;
+   cout<<"5. Mostrar pacientes cadastrados" << endl;
+   cout<<"6. Voltar" << endl << endl;
     cout <<"Selecione uma das opcoes: ";
     int op;
     cin >> op;
-    switch (op){
+    switch (op) {
     case 1:
-            menuPacienteCadastrar();
+        system("clear");
+        cout<< "Sistema de Apoio a Pesquisas da Doença de Alzeheimer" << endl << endl;
+        cout<< "Cadastro de pacientes" << endl << endl;
+        excecoes.ExcecoesCadastrarPaciente(lista);
+        MenuPaciente();
         break;
     case 2:
+        system("clear");
+        cout<< "Sistema de Apoio a Pesquisas da Doença de Alzeheimer" << endl << endl;
+        cout<< "Cadastro de pacientes" << endl << endl;
+        excecoes.ExcecoesAlterarPaciente(lista);
+        MenuPaciente();
+        break;
+    case 3:
+        system("clear");
+        cout<< "Sistema de Apoio a Pesquisas da Doença de Alzeheimer" << endl << endl;
+        cout<< "Cadastro de pacientes" << endl << endl;
+        excecoes.ExcecoesExcluirPaciente(lista);
+        getchar();
+        getchar();
+        MenuPaciente();
+        break;
+    case 4:
+        system("clear");
+        cout<< "Sistema de Apoio a Pesquisas da Doença de Alzeheimer" << endl << endl;
+
+        cout<< "Cadastro de pacientes" << endl << endl;
+        excecoes.ExcecoesConsultarPaciente(lista);
+        getchar();
+        getchar();
+        MenuPaciente();
+        break;
+    case 5:
             system("clear");
             cout<< "Sistema de Apoio a Pesquisas da Doença de Alzeheimer" << endl << endl;
             cout<< "Pacientes cadastrados: " << endl << endl;
             lista->imprimir();
             getchar();
             getchar();
-            menuPaciente();
+            MenuPaciente();
         break;
-    case 3:
-            menu();
+    case 6:
+            Menu();
         break;
     default:
         break;
     }
 }
 
-void Telas::menuPacienteCadastrar( ){
-    string nome,continente,sexo,histfam,tratamento;
-    int idade;
-    system("clear");
-    cout<< "Sistema de Apoio a Pesquisas da Doença de Alzeheimer" << endl << endl;
-    cout<< "Cadastro de pacientes" << endl << endl;
-    cout << "Nome: ";
-    cin >> nome;
-    cout << "Idade: ";
-    cin >>  idade;
-    cout << "Continente (america, europa,asia, africa e oceania): ";
-    cin >>  continente;
-    cout << "Sexo (M/F): ";
-    cin >>  sexo;
-    cout << "Historico familiar (S/N): ";
-    cin>> histfam;
-    cout << "Tratamento: ";
-    cin >>  tratamento;
-    Tratamento trataa;
-    trataa.setNome(tratamento);
-    Paciente *paciente = new Paciente(nome,idade,continente,sexo,histfam,trataa);
-    lista->inserir(paciente);
-    menuPaciente();
-}
 
-void Telas::menuManipulacaoDados( ){
+void Telas::MenuManipulacaoDados( ){
     system("clear");
     cout<< "Sistema de Apoio a Pesquisas da Doença de Alzeheimer" << endl << endl;
     cout<<"1. Geracao de dados estatisticos" << endl;
@@ -97,7 +102,7 @@ void Telas::menuManipulacaoDados( ){
      cout <<"Selecione uma das opcoes: ";
      int op;
      cin >> op;
-     switch (op){
+     switch (op) {
      case 1:
 
          break;
@@ -105,16 +110,16 @@ void Telas::menuManipulacaoDados( ){
          system("clear");
          cout<< "Sistema de Apoio a Pesquisas da Doença de Alzeheimer" << endl << endl;
          cout<< "Geração de relatórios " << endl << endl;
-         relatorio.relatorio(lista);
+         relatorio.Relatorio(lista);
          getchar();
          getchar();
-         menuManipulacaoDados();
+         MenuManipulacaoDados();
          break;
      case 3:
 
          break;
      case 4:
-             menu();
+             Menu();
          break;
      default:
          break;
@@ -122,7 +127,7 @@ void Telas::menuManipulacaoDados( ){
 }
 
 
-void Telas::menuOpcoes() {
+void Telas::MenuOpcoes() {
     system("clear");
     cout<< "Sistema de Apoio a Pesquisas da Doença de Alzeheimer" << endl << endl;
     cout<<"1. Importar CSV   " << endl;
@@ -131,7 +136,7 @@ void Telas::menuOpcoes() {
      cout <<"Selecione uma das opcoes: ";
      int op;
      cin >> op;
-     switch (op){
+     switch (op) {
      case 1:
 
          break;
@@ -139,39 +144,34 @@ void Telas::menuOpcoes() {
          system("clear");
          cout<< "Sistema de Apoio a Pesquisas da Doença de Alzeheimer" << endl << endl;
          cout<< "Geração de relatórios " << endl << endl;
-         relatorio.relatorio(lista);
+         relatorio.Relatorio(lista);
          getchar();
          getchar();
-         menuManipulacaoDados();
+         MenuManipulacaoDados();
          break;
      case 3:
-            menu();
+            Menu();
          break;
      default:
          break;
      }
 }
 
-void Telas::teste(){
+void Telas::Teste(){
 
-        float cont;
+    int cont;
         string nome = "igor";
-        Arquivo arquivo;
-        Tratamento trataa;
-        trataa.setNome("natural");
-        Paciente *paciente = new Paciente("igor",12,"america","M","Sim",trataa);
-        Paciente *paciente1 = new Paciente("igor",20,"europa","F","Sim",trataa);
-        Paciente *paciente2 = new Paciente("igor",40,"asia","M","Sim",trataa);
-        Paciente *paciente3 = new Paciente("igor",40,"europa","M","Sim",trataa);
+        Paciente *paciente = new Paciente("igor",12,"america","M","Sim","natural");
+        Paciente *paciente1 = new Paciente("igor",20,"europa","F","Sim","natural");
+        Paciente *paciente2 = new Paciente("igor",40,"asia","M","Sim","natural");
+        Paciente *paciente3 = new Paciente("igor",40,"europa","M","Sim","natural");
         lista->inserir(paciente);
         lista->inserir(paciente1);
         lista->inserir(paciente2);
         lista->inserir(paciente3);
-        //lista = arquivo.lerArquivo();
-
         lista->imprimir();
-        cont = lista->contador();
-        relatorio.relatorio(lista);
+        //relatorio.RelatorioContinente(lista);
+        relatorio.Relatorio(lista);
         //cout << lista->contador()<<endl;
         //arquivo.escreverArquivo(lista);
         //lista = arquivo.lerArquivo();
