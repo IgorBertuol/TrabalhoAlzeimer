@@ -14,7 +14,6 @@ public:
     void relatorioSexo(ListaPaciente *lista,float cont);
     void relatorioContinente(ListaPaciente *lista,float cont);
     void relatorioXY(ListaPaciente *lista,float cont);
-    void relatorio(ListaPaciente *lista);
 
 };
 

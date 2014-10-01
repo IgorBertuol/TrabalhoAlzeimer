@@ -126,10 +126,4 @@ void Relatorios::relatorioXY(ListaPaciente *lista, float cont){
     cout << "Feminino da Europa:  " << contFEu << " e " << percFEu << "%"<< endl;
 }
 
-void Relatorios::relatorio(ListaPaciente *lista){
-    float cont;
-    cont = lista->contador();
-    relatorioSexo(lista,cont);
-    relatorioContinente(lista,cont);
-    relatorioXY(lista,cont);
-}
+

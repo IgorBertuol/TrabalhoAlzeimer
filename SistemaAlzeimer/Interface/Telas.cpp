@@ -88,37 +88,49 @@ void Telas::menuPacienteCadastrar( ){
 }
 
 void Telas::menuManipulacaoDados( ){
+    char opcaoR;
+    float cont;
     system("clear");
     cout<< "Sistema de Apoio a Pesquisas da Doença de Alzeheimer" << endl << endl;
     cout<<"1. Geracao de dados estatisticos" << endl;
     cout<<"2. Geracao de relatorios" << endl;
     cout<<"3. Filtro de dados" << endl;
     cout<<"4. Voltar" << endl << endl;
-     cout <<"Selecione uma das opcoes: ";
-     int op;
-     cin >> op;
-     switch (op){
-     case 1:
+    cout <<"Selecione uma das opcoes: ";
+    int op;
+    cin >> op;
+    switch (op){
+    case 1:
 
-         break;
-     case 2:
-         system("clear");
-         cout<< "Sistema de Apoio a Pesquisas da Doença de Alzeheimer" << endl << endl;
-         cout<< "Geração de relatórios " << endl << endl;
-         relatorio.relatorio(lista);
-         getchar();
-         getchar();
-         menuManipulacaoDados();
-         break;
-     case 3:
+        break;
+    case 2:
+        cont = lista->contador();
+        system("clear");
+        cout<< "Sistema de Apoio a Pesquisas da Doença de Alzeheimer" << endl << endl;
+        cout<< "Geração de relatórios " << endl << endl;
+        cout<< "a)Quantidade e % de pacientes por sexo" << endl;
+        cout<< "b)Quantidade e % de pacientes por continente" << endl;
+        cout<< "c)Quantidade e % de pacientes por sexo X e continente Y" << endl;
+        cout << "Qual a opcao desejada :" << endl << endl;
+        cin >> opcaoR;
+        if(opcaoR == 'a'){
+            relatorio.relatorioSexo(lista,cont);
+        }else if(opcaoR == 'b'){
+            relatorio.relatorioContinente(lista,cont);
+        }else relatorio.relatorioXY(lista, cont);
+        getchar();
+        getchar();
+        menuManipulacaoDados();
+        break;
+    case 3:
 
-         break;
-     case 4:
-             menu();
-         break;
-     default:
-         break;
-     }
+        break;
+    case 4:
+            menu();
+        break;
+    default:
+        break;
+    }
 }
 
 
@@ -136,13 +148,6 @@ void Telas::menuOpcoes() {
 
          break;
      case 2:
-         system("clear");
-         cout<< "Sistema de Apoio a Pesquisas da Doença de Alzeheimer" << endl << endl;
-         cout<< "Geração de relatórios " << endl << endl;
-         relatorio.relatorio(lista);
-         getchar();
-         getchar();
-         menuManipulacaoDados();
          break;
      case 3:
             menu();
@@ -171,7 +176,7 @@ void Telas::teste(){
 
         lista->imprimir();
         cont = lista->contador();
-        relatorio.relatorio(lista);
+        //relatorio.relatorio(lista);
         //cout << lista->contador()<<endl;
         //arquivo.escreverArquivo(lista);
         //lista = arquivo.lerArquivo();

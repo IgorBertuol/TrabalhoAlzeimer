@@ -1,9 +1,8 @@
-
 #include <iostream>
 #include <string>
 #include <stdlib.h>
 #include <stdio.h>
-#include "Excecoes.h"
+#include "Negocio/Excecoes.h"
 
 void Excecoes::ExcecoesCadastrarPaciente(ListaPaciente *lista){
     string nome,continente,sexo,histfam,tratamento;
@@ -38,7 +37,7 @@ void Excecoes::ExcecoesCadastrarPaciente(ListaPaciente *lista){
     cin >>  tratamento;
     Tratamento trata;
     trata.setNome(tratamento);
-    ListaPaciente *paciente = new ListaPaciente(nome,idade,continente,sexo,histfam,trata);
+    Paciente *paciente = new Paciente(nome,idade,continente,sexo,histfam,trata);
     lista->inserir(paciente);
 }
 
