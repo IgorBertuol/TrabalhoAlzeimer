@@ -18,7 +18,7 @@ public:
     ListaTratamento();
     void inserirTratamento(Tratamento* tratamento);
     int deletarTratamento(string nomeTratamento);
-    int alterarTratamento(string nomeTratamento);
+    int verificarTratamento(string nomeTratamento);
     void consultarTratamento(string nomeTratamento);
 };
 

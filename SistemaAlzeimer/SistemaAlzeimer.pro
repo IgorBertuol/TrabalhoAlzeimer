@@ -23,7 +23,8 @@ SOURCES += main.cpp \
     Negocio/Relatorios.cpp \
     Negocio/Tratamento.cpp \
     Negocio/ListaPaciente.cpp \
-    Negocio/ListaTratamento.cpp
+    Negocio/ListaTratamento.cpp \
+    Negocio/Filtros.cpp
 
 HEADERS += \
     Persistencia/Arquivo.h \
@@ -33,4 +34,7 @@ HEADERS += \
     Negocio/Relatorios.h \
     Negocio/Tratamento.h \
     Negocio/ListaPaciente.h \
-    Negocio/ListaTratamento.h
+    Negocio/ListaTratamento.h \
+    Negocio/Filtros.h
+
+TRANSLATIONS = traducoes/sistemaAlzeimer_en.ts

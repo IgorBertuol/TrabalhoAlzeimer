@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include "ListaPaciente.h"
+#include <QObject>
 
 using namespace std;
 
@@ -27,49 +28,39 @@ void ListaPaciente::inserir(Paciente* paciente){
     }
 }
 
-int ListaPaciente::deletar(string nome){
-    Apontador deletaNo = NULL;
+void ListaPaciente::deletar(string nome){
+    atual = primeiro->proximo;
     temp = primeiro;
-    atual = primeiro;
-    while(atual != NULL && atual->item->getNome() != nome ){
+    while(atual != NULL && atual->item->getNome() != nome){
         temp = atual;
         atual = atual->proximo;
     }
-    if(atual == NULL){
-        return 0;
-        delete deletaNo;
-    }
-    else{
-        deletaNo = atual;
-        atual = atual->proximo;
-        temp->proximo = atual;
-        delete deletaNo;
-        return 1;
-    }
+    temp->proximo = atual->proximo;
+    delete temp;
 }
+
 int ListaPaciente::alterar(string nome){
     atual = primeiro;
+    string nomeP,continente,sexo,histfam,tratamento;
+    int idade;
     while(atual != NULL && atual->item->getNome() != nome){
         atual = atual->proximo;
-    }
-    if(atual == NULL){
-        return 0;
-    }
-    else{
-        return 1;
     }
 }
 
 
 void ListaPaciente::imprimir(){
     atual = primeiro;
+    if(atual == NULL){
+        cout << "Lista Vazia";
+    }
     while(atual != NULL){
-        cout << atual->item->getNome() << endl;
-        cout << atual->item->getIdade() << endl;
-        cout << atual->item->getContinente() << endl;
-        cout << atual->item->getSexo() << endl;
-        cout << atual->item->getHistorico() << endl;
-        cout << atual->item->getTratamento().getNome() << endl;
+        cout << "Nome: " << atual->item->getNome() << endl;
+        cout << "Idade: " << atual->item->getIdade() << endl;
+        cout << "Continente: " << atual->item->getContinente() << endl;
+        cout << "Sexo: " << atual->item->getSexo() << endl;
+        cout << "Historico: " <<atual->item->getHistorico() << endl;
+        cout << "Tratamento: " << atual->item->getTratamento().getNome() << endl;
         cout << endl;
         atual = atual->proximo;
     }

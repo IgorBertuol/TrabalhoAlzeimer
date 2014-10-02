@@ -1,9 +1,10 @@
 #ifndef EXCECOES_H
 #define EXCECOES_H
-
 #include "Negocio/ListaPaciente.h"
+#include "Negocio/ListaTratamento.h"
 #include "Negocio/Paciente.h"
 #include "Persistencia/Arquivo.h"
+
 
 class Excecoes{
 public:
@@ -12,5 +13,8 @@ public:
     void ExcecoesExcluirPaciente(ListaPaciente *lista);
     void ExcecoesConsultarPaciente(ListaPaciente *lista);
     ListaPaciente *lista= new ListaPaciente;
-    Arquivo arquivo; };
+    Arquivo arquivo;
+
+};
+
 #endif // EXCECOES_H

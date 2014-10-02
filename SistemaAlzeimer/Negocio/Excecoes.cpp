@@ -2,50 +2,50 @@
 #include <string>
 #include <stdlib.h>
 #include <stdio.h>
-#include "Negocio/Excecoes.h"
+#include "Excecoes.h"
+#include <QObject>
 
 void Excecoes::ExcecoesCadastrarPaciente(ListaPaciente *lista){
     string nome,continente,sexo,histfam,tratamento;
     int idade;
 
-    cout << "Nome: ";
+    cout<< QObject::tr( "Nome: ").toStdString();
     while(cin >>  nome && nome < "0"){
-           cout << "Nome Invalido! Digite novamente: ";
+           cout<< QObject::tr( "Nome Invalido! Digite novamente: ").toStdString();
 }
 
-    cout << endl << "Idade: ";
+    cout<< QObject::tr("Idade: ").toStdString();;
     while(cin >>  idade && idade < 1){
-           cout << "Idade Invalida! Digite novamente: ";
+           cout<< QObject::tr( "Idade Invalida! Digite novamente: ").toStdString();
     }
 
-    cout << endl << "Continente (america, europa, asia, africa e oceania): ";
+    cout<< QObject::tr("Continente (america, europa, asia, africa e oceania): ").toStdString();;
   while( cin >> continente  && continente != "america" && continente != "europa" && continente != "asia" && continente != "africa" && continente != "oceania" ){
-        cout << "Continente Invalido! Digite novamente: ";
+        cout<< QObject::tr( "Continente Invalido! Digite novamente: ").toStdString();;
     }
 
-    cout << endl  << "Sexo (M/F): ";
+    cout<< QObject::tr("Sexo (M/F): ").toStdString();;
     while(cin >>  sexo && sexo != "F" && sexo != "M"){
-           cout << "Sexo Invalido! Digite novamente: ";
+           cout<< QObject::tr( "Sexo Invalido! Digite novamente: ").toStdString();;
     }
 
-    cout << endl  << "Historico familiar (S/N): ";
+    cout<< QObject::tr("Historico familiar (S/N): ").toStdString();;
     while(cin >>  histfam && histfam != "S" && histfam != "N"){
-           cout << "Historico familiar Invalido! Digite novamente: ";
+           cout<< QObject::tr( "Historico familiar Invalido! Digite novamente: ").toStdString();;
     }
 
-    cout << endl << "Tratamento: ";
+    cout<< QObject::tr("Tratamento: ").toStdString();
     cin >>  tratamento;
-    Tratamento trata;
-    trata.setNome(tratamento);
-    Paciente *paciente = new Paciente(nome,idade,continente,sexo,histfam,trata);
+    Tratamento trataa;
+    trataa.setNome(tratamento);
+    Paciente *paciente = new Paciente(nome,idade,continente,sexo,histfam,trataa);
     lista->inserir(paciente);
 }
 
 void Excecoes::ExcecoesAlterarPaciente(ListaPaciente *lista){
     string nome;
     cin >> nome;
-    if (lista->alterar(nome) == 1)
-        cout <<lista->primeiro->item->getNome();
+    lista->alterar(nome);
 }
 
 void Excecoes::ExcecoesExcluirPaciente(ListaPaciente *lista){

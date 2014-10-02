@@ -48,15 +48,15 @@ int ListaTratamento::deletarTratamento(string nome){
     }
 }
 
-void ListaTratamento::consultarTratamento(string nome){
+int ListaTratamento::verificarTratamento(string nome){
     atual = primeiro;
     while(atual != NULL && atual->item->getNome() != nome){
         atual = atual->proximo;
     }
     if(atual == NULL){
-        cout << "nao" << endl;
+        return 0;
     }
     else{
-        cout << atual->item->getNome() << endl;
+        return 1;
     }
 }

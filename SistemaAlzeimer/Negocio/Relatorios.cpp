@@ -1,4 +1,5 @@
 #include "Relatorios.h"
+#include <QObject>
 
 
 void Relatorios::relatorioSexo(ListaPaciente *lista,float cont){
@@ -16,9 +17,9 @@ void Relatorios::relatorioSexo(ListaPaciente *lista,float cont){
     percF = (contSexoF/cont) * 100;
     percM = (contSexoM/cont) * 100;
 
-    cout << "a) quantidade e % de pessoas por sexo:" << endl;
-    cout << "Feminino:  " << contSexoF << "  / Porcentagem: " << percF << "%"<< endl;
-    cout << "Masculino:  " << contSexoM << "  / Porcentagem: " << percM << "%"<< endl  << endl;
+    cout<< QObject::tr( "a) quantidade e % de pessoas por sexo:").toStdString() << endl;
+    cout<< QObject::tr( "Feminino:  ").toStdString() << contSexoF << "  / Porcentagem: " << percF << "%"<< endl;
+    cout<< QObject::tr( "Masculino:  ").toStdString() << contSexoM << "  / Porcentagem: " << percM << "%"<< endl  << endl;
 }
 
 void Relatorios::relatorioContinente(ListaPaciente *lista,float cont){
@@ -52,12 +53,12 @@ void Relatorios::relatorioContinente(ListaPaciente *lista,float cont){
     percE = (contContinenteE/cont) * 100;
 
 
-    cout << "b) quantidade e % de pessoas por continente" << endl;
-    cout << "America:  " << contContinenteAm << "  / Porcentagem: " << percAm << "%"<< endl;
-    cout << "Asia:  " << contContinenteAs << "  / Porcentagem: " << percAs << "%" << endl;
-    cout << "Oceania:  " << contContinenteO << "  / Porcentagem: " << percO << "%"<< endl;
-    cout << "Africa:  " << contContinenteAf << "  / Porcentagem: " << percAf << "%" << endl;
-    cout << "Europa:  " << contContinenteE << "  / Porcentagem: " << percE << "%"<< endl << endl;
+    cout<< QObject::tr( "b) quantidade e % de pessoas por continente").toStdString() << endl;
+    cout<< QObject::tr( "America:  ").toStdString() << contContinenteAm << "  / Porcentagem: " << percAm << "%"<< endl;
+    cout<< QObject::tr( "Asia:  ").toStdString() << contContinenteAs << "  / Porcentagem: " << percAs << "%" << endl;
+    cout<< QObject::tr( "Oceania:  ").toStdString() << contContinenteO << "  / Porcentagem: " << percO << "%"<< endl;
+    cout<< QObject::tr( "Africa:  ").toStdString() << contContinenteAf << "  / Porcentagem: " << percAf << "%" << endl;
+    cout<< QObject::tr( "Europa:  ").toStdString() << contContinenteE << "  / Porcentagem: " << percE << "%"<< endl << endl;
 
 }
 
@@ -113,17 +114,17 @@ void Relatorios::relatorioXY(ListaPaciente *lista, float cont){
     percMEu = (contMEu/cont) * 100;
     percFEu = (contFEu/cont) * 100;
 
-    cout << "c) quantidade e % de pessoas do sexo X do continente Y" << endl;
-    cout << "Masculino da America:  " << contMAm << " e " << percMAm << "%"<< endl;
-    cout << "Masculino da Asia:  " <<  contMAs << " e " << percMAs << "%" << endl;
-    cout << "Masculino da Africa:  " <<  contMAf << " e " << percMAf << "%" << endl;
-    cout << "Masculino da Oceania:  " <<  contMO << " e " << percMOc << "%" << endl;
-    cout << "Masculino da Europa:  " <<  contMEu << " e " << percMEu << "%" << endl;
-    cout << "Feminino da America:  " << contFAm <<  " e " << percFAm << "%"<< endl;
-    cout << "Feminino da Asia:  " << contFAs << " e " << percFAs << "%"<< endl;
-    cout << "Feminino da Africa:  " << contFAf << " e " << percFAf << "%"<< endl;
-    cout << "Feminino da Oceania:  " << contFO << " e " << percFOc << "%"<< endl;
-    cout << "Feminino da Europa:  " << contFEu << " e " << percFEu << "%"<< endl;
+    cout<< QObject::tr( "c) quantidade e % de pessoas do sexo X do continente Y").toStdString() << endl;
+    cout<< QObject::tr( "Masculino da America:  ").toStdString() << contMAm << " e " << percMAm << "%"<< endl;
+    cout<< QObject::tr( "Masculino da Asia:  ").toStdString() <<  contMAs << " e " << percMAs << "%" << endl;
+    cout<< QObject::tr( "Masculino da Africa:  ").toStdString() <<  contMAf << " e " << percMAf << "%" << endl;
+    cout<< QObject::tr( "Masculino da Oceania:  ").toStdString() <<  contMO << " e " << percMOc << "%" << endl;
+    cout<< QObject::tr( "Masculino da Europa:  ").toStdString() <<  contMEu << " e " << percMEu << "%" << endl;
+    cout<< QObject::tr( "Feminino da America:  ").toStdString() << contFAm <<  " e " << percFAm << "%"<< endl;
+    cout<< QObject::tr( "Feminino da Asia:  ").toStdString() << contFAs << " e " << percFAs << "%"<< endl;
+    cout<< QObject::tr( "Feminino da Africa:  ").toStdString() << contFAf << " e " << percFAf << "%"<< endl;
+    cout<< QObject::tr( "Feminino da Oceania:  ").toStdString() << contFO << " e " << percFOc << "%"<< endl;
+    cout<< QObject::tr( "Feminino da Europa:  ").toStdString() << contFEu << " e " << percFEu << "%"<< endl;
 }
 
 
